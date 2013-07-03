@@ -78,3 +78,15 @@ form.quirks {
 td {
   padding: 5px;
 }
+
+tr {
+  border-top: 1px solid black;
+}
+
+td {
+  border-left: 1px dotted;
+}
+
+tr.header {
+  font-weight: bold;
+}
