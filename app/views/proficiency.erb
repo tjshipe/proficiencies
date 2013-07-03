@@ -8,7 +8,7 @@
   <form class="proficiency_form" action="/add_prof" method="POST">
     Skill: <input type="text" name="prof[skill]" placeholder="Ruby">
     Years: <input type="text" name="prof[years]" placeholder="1">
-    Formal?: <input type="text" name="prof[years]" placeholder="Yes"><br>
+    Formal?: <input type="text" name="prof[formal]" placeholder="Yes"><br>
     <input type="submit" value="Submit">
   </form>
   <br>
@@ -26,7 +26,7 @@
       <td><%= prof.skill.name %></td>
       <td><%= prof.years %></td>
       <td><%= prof.formal %></td>
-      <td><a href="#">Delete?</a></td>
+      <td><a href="/delete_proficiency/<%= prof.id %>">Delete?</a></td>
     </tr>
   <% end %>
   </table>

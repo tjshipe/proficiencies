@@ -43,10 +43,25 @@ end
 
 post '/add_prof' do
   user = User.find(session[:user_id])
-
+  
+  skill = Skill.find_or_initialize_by_name(params[:prof][:skill])
+  skill.context = 'technical'
+  skill.save
+  
+  bob = user.proficiencies.new(years: params[:prof][:years], formal: params[:prof][:formal])
+  bob.skill_id = skill.id
+  bob.save
+  
   redirect "/edit_proficiencies/#{user.id}"
 end
 
+get '/delete_proficiency/:id' do
+  user = User.find(session[:user_id])
+  proficiency = user.proficiencies.find(params[:id])
+  proficiency.destroy
+
+  redirect "/edit_proficiencies/#{user.id}"
+end
 
 #----------- USERS -----------
 
