@@ -13,10 +13,16 @@
     <tr>
       <td><%= user.name %></td>
       <td>
-        Ruby<br>Javascript<br>
+        <% user.skills.each do |skills|%>
+        <%= skills.name %><br>
+        <%end%>
       </td>
-      <td>Baa</td>
-      <td>Yes</td>
+      <td><% user.proficiencies.each do |skills|%>
+        <%= skills.years %><br>
+        <%end%></td>
+      <td><% user.proficiencies.each do |skills|%>
+        <%= skills.formal %><br>
+        <%end%></td>
     </tr>
     <% end %>
   </table>
