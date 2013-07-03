@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>User Skills and Levels</h1>
+
+  <div class="skills_table">
+    <table>
+    <tr>
+      <td>Name</td>
+      <td>Skill</td>
+      <td>Years</td>
+      <td>Formal?</td>
+    </tr>
+    <% User.all.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td>
+        Ruby<br>Javascript<br>
+      </td>
+      <td>Baa</td>
+      <td>Yes</td>
+    </tr>
+    <% end %>
+  </table>
+
+  </div>
+
+  <%# TODO: display the skills and proficiency levels for each user ... %>
+</div>

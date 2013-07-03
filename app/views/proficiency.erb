@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Edit Proficiencies</h1>
+
+  Name: <%= @user.name %>
+  <br><br>
+
+  <h2>Add Proficiencies</h2>
+  <form class="proficiency_form" action="/add_prof" method="POST">
+    Skill: <input type="text" name="prof[skill]" placeholder="Ruby">
+    Years: <input type="text" name="prof[years]" placeholder="1">
+    Formal?: <input type="text" name="prof[years]" placeholder="Yes"><br>
+    <input type="submit" value="Submit">
+  </form>
+  <br>
+
+  <h2>Delete Proficiencies</h2>
+  <table>
+    <tr>
+      <td><b>Skill</td>
+      <td><b>Years</td>
+      <td><b>Formal</b></td>
+      <td></td>
+    </tr>
+  <% @prof.each do |prof| %>
+    <tr>
+      <td><%= prof.skill.name %></td>
+      <td><%= prof.years %></td>
+      <td><%= prof.formal %></td>
+      <td><a href="#">Delete?</a></td>
+    </tr>
+  <% end %>
+  </table>
+
+</div>
+
